@@ -202,6 +202,7 @@ th {
   a,
   a:visited {
     text-decoration: underline;
+    font-family: 'Roboto'
   }
   a[href]:after {
     content: " (" attr(href) ")";
@@ -258,7 +259,7 @@ th {
   .table td,
   .table th {
     background-color: #fff !important;
-  }
+  }`
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
@@ -1078,7 +1079,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 input,
 button,
@@ -5779,7 +5780,7 @@ button.close {
 .modal-body {
   position: relative;
   padding: 15px;
-  background: #383838;
+  background: #FFF;
 }
 .modal-footer {
   padding: 15px;
@@ -5825,7 +5826,8 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: 'Roboto';
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;

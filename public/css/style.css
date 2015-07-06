@@ -5,7 +5,7 @@ body, html{
 	font-family: 'Lato', sans-serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
-	color: #5a5a5a;
+	color: #fff;
 }
 
 h1{
@@ -41,7 +41,7 @@ p.intro{
 font-family: 'Roboto', sans-serif;
 }
 a{ color: #787878;
-	font-family: 'Roboto', sans-serif;
+	
 }
 a:hover,
 a:focus{
@@ -78,8 +78,9 @@ ul, ol{
 	transition: all 0.8s;
 }
 #tf-menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
-	border-color: rgba(231, 231, 231, 0);
+	background-color: #fff;
+	/*background-color: rgba(255, 255, 255, 0);*/
+	/*border-color: rgba(255, 255, 255, 0);*/
 }
 #tf-menu a.navbar-brand {
 text-transform: uppercase;
@@ -91,7 +92,8 @@ font-weight: 500;
 
 #tf-menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
-	color: #000;
+	background-color: #fff;
+	/*color: #000;*/
 	font-size: 12px;
 	letter-spacing: 1px;
 }

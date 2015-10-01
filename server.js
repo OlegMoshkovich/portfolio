@@ -12,6 +12,15 @@ app.get('/hello', function(req,res){
       res.sendfile(__dirname+'/public/hello.html');
 });
 
+app.get('/hc', function(req,res){
+       res.sendfile(__dirname + '/public/hc.html');
+});
+
+app.get('/radial', function(req,res){
+       res.sendfile(__dirname + '/public/radial.html');
+});
+
+
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log(" I am listening on some port");
 });

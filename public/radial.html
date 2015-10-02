@@ -35,7 +35,7 @@
 }
 
 .node text {
-  font: 15px sans-serif;
+  font: 20px sans-serif;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -58,7 +58,7 @@
     
     
     <div class = 'center'> Human Condition Internal Dashboard - sketch</div>
-    <div class = 'center'><a href="/hc"><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
+    <div class = 'center'><a href="http://www.humanconditionglobal.com"><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
     <script src="js/d3/d3.js"></script>
 
@@ -118,13 +118,11 @@ var treeData = [
           {
             "name": "Dylan",
             "parent": "Level 4: A",
-           "url":  "https://www.linkedin.com/in/dylanyep" 
             
           },
           {
             "name": "Steph",
             "parent": "Level 4: A",
-             "url":  "https://www.linkedin.com/in/stephreaves"
           }
           ]
           },
@@ -135,8 +133,6 @@ var treeData = [
           {
             "name": "Rob",
             "parent": "Level 4: A",
-             "url":  "https://www.linkedin.com/pub/rob-storm/9/784/982?trk=pub-pbmap"
-            
             
           },]
           }
@@ -205,26 +201,20 @@ var treeData = [
             "parent": "Level 2: A",
             "children": [
           {
-            "name": "CFO",
-            "parent": "Level 4: A",
-            //"url":"https://www.linkedin.com/pub/adam-bellin/17/9a8/75b"
-                   "children": [
-          {
             "name": "Bob",
             "parent": "Level 4: A",
-            
-          },]
+            "url":"https://www.linkedin.com/pub/adam-bellin/17/9a8/75b"
             
           },
 
           {
-            "name": "Models",
+            "name": "Neda",
             "parent": "Level 4: A",
             // "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
             
           },
           {
-            "name": "Analysis",
+            "name": "Magdalena",
             "parent": "Level 4: A",
             // "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
             
@@ -329,7 +319,7 @@ function update(source) {
 	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
   nodeUpdate.select("circle")
-	  .attr("r", 5)
+	  .attr("r", 10)
 	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
 
   nodeUpdate.select("text")
@@ -406,8 +396,9 @@ function click(d) {
 
 
 </script> 
-<a href="/hc-dependencies"><div class = 'center' ><font size="1" color="grey ">HC - Dependencies</font></div></a>
-<a href="/hc-dependencies"><div class = 'center' ><font size="1" color="grey ">HC - Analytics</font></div></a>
+<a href="/hc"><div class = 'center' ><font size="1" color="grey ">The cluster hierarchical layout : Dendrogram</font></div></a>
+   
+   
     
 </body>
 

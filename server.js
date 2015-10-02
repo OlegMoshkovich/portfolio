@@ -20,6 +20,10 @@ app.get('/radial', function(req,res){
        res.sendfile(__dirname + '/public/radial.html');
 });
 
+app.get('/hc-dependencies', function(req,res){
+       res.sendfile(__dirname + '/public/hc-dependencies.html');
+});
+
 
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log(" I am listening on some port");

@@ -48,6 +48,10 @@ app.get('/hcs-ecosystem-future', function(req,res){
        res.sendfile(__dirname + '/public/hcs-ecosystem-future.html');
 });
 
+app.get('/hcs', function(req,res){
+       res.sendfile(__dirname + '/public/hcs.html');
+});
+
 
 app.listen(process.env.PORT, process.env.IP, function(){
   console.log(" I am listening on some port");

@@ -40,6 +40,13 @@ app.get('/simplechart', function(req,res){
        res.sendfile(__dirname + '/public/simple_chart.html');
 });
 
+app.get('/hcs-ecosystem-current', function(req,res){
+       res.sendfile(__dirname + '/public/hcs-ecosystem-current.html');
+});
+
+app.get('/hcs-ecosystem-future', function(req,res){
+       res.sendfile(__dirname + '/public/hcs-ecosystem-future.html');
+});
 
 
 app.listen(process.env.PORT, process.env.IP, function(){

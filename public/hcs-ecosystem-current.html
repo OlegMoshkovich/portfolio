@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<title>Human condiiton</title>
+  <link rel="stylesheet" type="text/css"  href="css/hc.css">
+
+
+    <meta charset="UTF-8">
+    <meta content="utf-8" http-equiv="encoding">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon-square.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    
+
+
+<style>
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  /*fill: white;*/
+  stroke: grey;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 15px sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+</style>
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+</head>
+
+<body>
+    
+    <html xmlns:xlink="http://www.w3.org/1999/xlink">
+
+</html>
+    
+    
+    <div class = 'center'> HCS Ecosystem - current - sketch</div>
+    <div class = 'center'><a href="/hcs-ecosystem-current"><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="js/d3/d3.js"></script>
+
+
+
+<script>
+    
+
+var treeData = [
+  {
+    "name": "HCS Ecosystem",
+    "parent": "null",
+    "url":"https://docs.google.com/presentation/d/1SvkywgYgEmHlij-8cRBWPohQt3n53cM76LO-emKbRY8/edit#slide=id.ge2fbc7d71_2_268",
+    
+    
+    "children": [
+        
+      {
+        "name": "Product Manager",
+        "parent": "Top Level",
+        "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHbnYzdzlHaERId0E",
+        "children": [
+
+
+              {
+                "name": "Product Ecosystem",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Brian/Oleg",
+                        "parent": "Level 3: A",
+                          },       
+                         
+                  ]
+                  },
+              {
+                "name": "User Story",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Brian",
+                        "parent": "Level 3: A",
+                          },       
+                         
+                  ]
+                  },
+              {
+                "name": "Product Specification",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Brian",
+                        "parent": "Level 3: A",
+                          },       
+                         
+                  ]
+                  },
+
+            ]
+            },//Dashboard  
+      {
+        "name": "SafeLocate/Monitor",
+        "parent": "Top Level",
+        "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHbnYzdzlHaERId0E",
+        "children": [
+            //   {
+            //     "name": "Product Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Specification",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Brian",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+                                 
+            //               ]
+            //               },              
+            //       ]
+            //       },//Product Management
+            //   {
+            //     "name": "Project Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Budget/Schedule",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Daipen",
+            //                         "parent": "Level 4: A",
+            //                       },
+                                  
+                                      
+            //               ]
+            //               },              
+            //       ]
+            //       },//Project Management
+              {
+                "name": "R+D",
+                "parent": "Level 2: A",
+                "children": [
+          
+                                  {
+                                    "name": "Hardware/Board",
+                                    "parent": "Level 4: A",
+                                    "children": [
+                                  {
+                                    "name": "Sergey",
+                                    "parent": "Level 4: A",
+
+                                  },
+                                  
+                                        {
+                                    "name": "Ryan",
+                                    "parent": "Level 4: A",
+
+                                  },
+                          ]
+
+                                  },
+                                  
+                          ]
+                          },//RD              
+              {
+                "name": "Creative",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Industrial Design",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "KJ",
+                                    "parent": "Level 4: A",
+                          
+                                  },
+                          ]
+                          },    
+                          
+                    //   {
+                    //     "name": "Vest",
+                    //     "parent": "Level 3: A",
+                    //     "children": [
+                    //               {
+                    //                 "name": "?",
+                    //                 "parent": "Level 4: A",
+                          
+                    //               },
+                    //       ]
+                    //       },  
+                  ]
+                  },//Creative
+            //   {
+            //     "name": "Biz Dev",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Ralationship",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "?",
+            //                         "parent": "Level 4: A",
+            //                       },
+                                  
+                                        
+            //               ]
+            //               },              
+            //       ]
+            //       },//Biz Dev
+            //   {
+            //     "name": "Outsourced",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Hardware",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Jabil",
+            //                         "parent": "Level 4: A",
+            //                         "url":"http://www.jabil.com/"
+            //                       },
+                                  
+                                        
+            //               ]
+            //               },              
+            //       ]
+            //       },//Outsourced
+            ]
+            },//SafeLocate/Monitor
+      {
+        "name": "HCS Engine",
+        "parent": "Top Level",
+        "url":"https://docs.google.com/presentation/d/10CGy03zFQiy2WlvEzn7_5rOiXT95dRODVL05Ac5Hquk/edit#slide=id.p",
+        "children": [
+            //   {
+            //     "name": "Product Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Specification",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Brian",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+                                 
+            //               ]
+            //               },              
+            //       ]
+            //       },//Product Management
+            //   {
+            //     "name": "Project Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Schedule/Budget",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Daipen",
+            //                         "parent": "Level 4: A",
+            //                       },
+                                  
+                                      
+            //               ]
+            //               },              
+            //       ]
+            //       },//Project Management
+              {
+                "name": "R+D",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Process",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Dylan",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },    
+                      {
+                        "name": "Cloud",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Dylan",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },    
+                      {
+                        "name": "Database",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Steph",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },                            
+                          
+                          
+                  ]
+                  },//RD
+              {
+                "name": "Digital Architecture",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Documentation",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Oleg",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                                  
+                          ]
+                          },  
+ 
+
+                          
+                  ]
+                  },//Digital Architecture
+            //   {
+            //     "name": "Creative",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Aesthetic",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "?",
+            //                         "parent": "Level 4: A",
+                          
+            //                       },
+                   
+                          
+            //               ]
+            //               },  
+                          
+            //      {
+            //             "name": "Aesthetic",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "?",
+            //                         "parent": "Level 4: A",
+                          
+            //                       },
+                   
+                          
+            //               ]
+            //               }, 
+            //       ]
+            //       },//Creative
+              {
+                "name": "Biz Dev",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Relationship",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Mirek",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },    
+                                                  
+                          
+                          
+                  ]
+                  },//BizDev
+              {
+                "name": "Partners",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Microsoft",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Azure",
+                                    "parent": "Level 4: A",
+                                    
+                                    "url":"https://azure.microsoft.com/en-us/?b=16.33"
+                                  },
+                                  {
+                                    "name": "Orleans",
+                                    "parent": "Level 4: A",
+                                    "url":"http://research.microsoft.com/en-us/projects/orleans/"
+                                  },                                
+                          ]
+                          },    
+
+                  ]
+                  },//Partners
+              {
+                "name": "Outsorced",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Local Servers",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Blue Metal",
+                                    "parent": "Level 4: A",
+                                    "url":"http://bluemetal.com/"
+                                  },
+                          ]
+                          },    
+                    //   {
+                    //     "name": "Cloud",
+                    //     "parent": "Level 3: A",
+                    //     "children": [
+                    //               {
+                    //                 "name": "?",
+                    //                 "parent": "Level 4: A",
+                    //                 "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                    //               },
+                    //       ]
+                    //       },  
+                    //   {
+                    //     "name": "Software",
+                    //     "parent": "Level 3: A",
+                    //     "children": [
+                    //               {
+                    //                 "name": "?",
+                    //                 "parent": "Level 4: A",
+                    //                 "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                    //               },
+                    //       ]
+                    //       },    
+                  ]
+                  },//Outsourced
+            ]
+            },//HSC- Engine
+      {
+        "name": "SafeScan",
+        "parent": "Top Level",
+        "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHbnYzdzlHaERId0E",
+        "children": [
+            //   {
+            //     "name": "Product Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Defenition",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Brian",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+                                 
+            //               ]
+            //               },              
+            //       ]
+            //      },//Product Management
+            //   {
+            //     "name": "Project Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Management",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Daipen",
+            //                         "parent": "Level 4: A",
+            //                       },
+                                  
+                                      
+            //               ]
+            //               },              
+            //       ]
+            //       },//Project Management
+              {
+                "name": "R+D",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Unity",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Rob",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },              
+                  ]
+                  },//RD
+              {
+                "name": "Digital Architecture",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Process ",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Oleg",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },  
+                        {
+                        "name": "Interoperability ",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Oleg/Rob",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },     
+                          
+   
+                  ]
+                  },//Digital Architecture
+            //   {
+            //     "name": "Creative",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Aesthetic",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "?",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+            //               ]
+            //               },              
+            //       ]
+            //       },//Creative
+            //   {
+            //     "name": "Biz Dev",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Relationship",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Mirek",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+            //               ]
+            //               },    
+                                                  
+                          
+                          
+            //       ]
+            //       },//BizDev
+            //   {
+            //     "name": "Outsourced",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Software",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "?",
+            //                         "parent": "Level 4: A",
+            //                         "url":"http://www.jabil.com/"
+            //                       },
+                                  
+                                        
+            //               ]
+            //               },              
+            //       ]
+            //       },//Outsourced
+            ]
+            },//SafeScan
+      {
+        "name": "Dashboard",
+        "parent": "Top Level",
+        "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHbnYzdzlHaERId0E",
+        "children": [
+            //   {
+            //     "name": "Product Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Defenition",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Brian",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+                                 
+            //               ]
+            //               },              
+            //       ]
+            //       },//Product Management
+            //   {
+            //     "name": "Project Management",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Management",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Daipen",
+            //                         "parent": "Level 4: A",
+            //                       },
+                                  
+                                      
+            //               ]
+            //               },              
+            //       ]
+            //       },//Project Management
+            //{
+            //     "name": "Digital Architecture",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Organization",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Oleg",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+            //               ]
+            //               }, 
+            //   {
+            //             "name": "Wireframe",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Oleg",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+            //               ]
+            //               },  
+            //       ]
+            //       },//Digital Architecture
+              {
+                "name": "Creative",
+                "parent": "Level 2: A",
+                "children": [
+                      {
+                        "name": "Prototype",
+                        "parent": "Level 3: A",
+                        "children": [
+                                  {
+                                    "name": "Scott",
+                                    "parent": "Level 4: A",
+                                    "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                                  },
+                          ]
+                          },       
+                          
+                //  {
+                //         "name": "Interface",
+                //         "parent": "Level 3: A",
+                //         "children": [
+                //                   {
+                //                     "name": "?",
+                //                     "parent": "Level 4: A",
+                //                     "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+                //                   },
+                //           ]
+                //           },   
+                  ]
+                  },//Creative
+            //{
+            //     "name": "Biz Dev",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Relationship",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "Mirek",
+            //                         "parent": "Level 4: A",
+            //                         "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            //                       },
+            //               ]
+            //               },    
+                                                  
+                          
+                          
+            //       ]
+            //       },//BizDev
+            //{
+            //     "name": "Outsourced",
+            //     "parent": "Level 2: A",
+            //     "children": [
+            //           {
+            //             "name": "Development",
+            //             "parent": "Level 3: A",
+            //             "children": [
+            //                       {
+            //                         "name": "?",
+            //                         "parent": "Level 4: A",
+            //                         "url":"http://www.jabil.com/"
+            //                       },
+                                  
+                                        
+            //               ]
+            //               },              
+            //       ]
+            //       },//Outsourced
+            ]
+            },//Dashboard
+     
+        ]
+        },
+      
+      
+    ];
+
+
+
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 20, right: 10, bottom: 20, left:300},
+	width = 1600 - margin.right - margin.left,
+	height = 500 - margin.top - margin.bottom;
+	
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click);
+
+  nodeEnter.append("circle")
+	  .attr("r", 1e-6)
+	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6)
+	  .on("click", function(d) { window.open(d.url); });;
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", 5)
+	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
+
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", function(d) {
+		var o = {x: source.x0, y: source.y0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {x: source.x, y: source.y};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.x0 = d.x;
+	d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+  function collapse(d) {
+    if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+  }
+
+  root.children.forEach(collapse);
+  update(root);
+
+
+
+</script> 
+
+<a href="/hcs-ecosystem-future"><div class = 'center' ><font size="1" color="grey ">HCS - EcoSystem - Protoype</font></div></a>
+<!--<a href="/hc-analytics"><div class = 'center' ><font size="1" color="grey ">HC - Analytics</font></div></a>-->
+    
+</body>
+
+
+</html>
+
+
+
+
+

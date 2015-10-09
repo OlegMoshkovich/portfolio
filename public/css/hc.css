@@ -7,3 +7,10 @@ font-family: 'Roboto', sans-serif;
 
 }
 
+.small {
+  font: 10px sans-serif;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: #B0B0B0;
+    
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Picker Example</title>
+
+   <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+        <script>
+            function onApiLoad() {
+                gapi.load('auth', { 'callback': onAuthApiLoad }); // load google api libraries Auth library
+                gapi.load('picker');//load picker library
+            }
+            
+            
+            function onAuthApiLoad() {
+                window.gapi.auth.authorize({
+                    'client_id': '591147524303-s6qvvkq7mqpl6cdot67i6hv6g3efii5a.apps.googleusercontent.com',//tells google that particular application would like to get acces
+                    'scope': ['https://www.googleapis.com/auth/drive']//scope option tells google we want access to the users drive
+                }, handleAuthResult);// callback method that gets called when the user tries to authenticate
+            }
+            
+            
+            var oauthToken;// if the user has not authenticated...call back this method
+            function handleAuthResult(authResult) {
+                if (authResult && !authResult.error) {
+                    oauthToken = authResult.access_token;//if authentication is successful set oauthToken variable to the result
+                    createPicker();
+                }
+            }
+            
+            
+            function createPicker() {
+                var picker = new google.picker.PickerBuilder()//build the new picker object
+                    
+                    .addView(new google.picker.DocsView())
+                    .addView(new google.picker.DocsUploadView())
+                    //.addView(new google.picker.DocsView.setIncludeFolders(boolean))
+                    
+                    .setOAuthToken(oauthToken)// set the auth token
+                    //.setDeveloperKey('AIzaSyAqKRdZtIlvFSyDQffxz1OkkdrbiQMUKEU')// look into why the developer key is invalid
+                    .setCallback(pickerCallback)
+                    .build();
+                picker.setVisible(true);//render the picker 
+            }
+
+            function pickerCallback(data) {
+                var url = 'nothing';
+                if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
+                    var doc = data[google.picker.Response.DOCUMENTS][0];
+                    url = doc[google.picker.Document.URL];
+                }
+                var message = 'You picked: ' + url;
+                document.getElementById('result').innerHTML = message;
+            }
+        </script>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+  </body>
+</html>

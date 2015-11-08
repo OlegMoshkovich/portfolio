@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<title>Human condiiton</title>
+  <link rel="stylesheet" type="text/css"  href="css/hc.css">
+
+
+    <meta charset="UTF-8">
+    <meta content="utf-8" http-equiv="encoding">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon-square.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    
+
+
+<style>
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  /*fill: white;*/
+  stroke: grey;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 15px sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+</style>
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+</head>
+
+<body>
+    
+    <html xmlns:xlink="http://www.w3.org/1999/xlink">
+
+</html>
+    
+    
+    <div class = 'center'> Human Condition important</div>
+    <div class = 'center'><a href="/important"><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="js/d3/d3.js"></script>
+
+
+
+<script>
+    
+
+var treeData = [
+  {
+    "name": "Human Condition Global",
+    "parent": "null",
+    "children": [
+      {
+        "name": "HC Safety",
+        "parent": "Top Level",
+        "children": [
+            
+          {
+            "name": "CitiField",
+            "parent": "Level 2: A",
+            "children": [
+          {
+            "name": "Brief",
+            "parent": "Level 3: A",
+            "url":"https://docs.google.com/presentation/d/1Nf15hgfCkXow7-kDcFEV91TsaPosupyPPgbB3i6o66M/edit#slide=id.ge4141adb5_0_31"
+        //     "children": [
+        //   {
+        //     "name": "Visit | Context",
+        //     "parent": "Level 4: A",
+        //     "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            
+        //   },
+
+        //   ]
+          },  
+          
+          {
+            "name": "Pilot areas",
+            "parent": "Level 3: A",
+            "url":"https://drive.google.com/drive/folders/0B5MfySBN8MA4elRlQVdXQUhuV0k"
+        //     "children": [
+        //   {
+        //     "name": "Sergey",
+        //     "parent": "Level 4: A",
+        //     "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            
+        //   },
+        //   {
+        //     "name": "Ryan",
+        //     "parent": "Level 4: A",
+        //   }
+        //   ]
+          },
+
+          {
+            "name": "Schedule",
+            "parent": "Level 3: A",
+            "url":  "https://app.asana.com/0/61659664942943/calendar",
+        //      "children": [
+        //   {
+        //     "name": "Dylan",
+        //     "parent": "Level 4: A",
+        //   "url":  "https://www.linkedin.com/in/dylanyep" 
+            
+        //   },
+        //   {
+        //     "name": "Steph",
+        //     "parent": "Level 4: A",
+        //      "url":  "https://www.linkedin.com/in/stephreaves"
+        //   }
+        //   ]
+          },
+          
+          
+          {
+            "name": "NOC",
+            "parent": "Level 3: A",
+            "url":  "https://drive.google.com/drive/folders/0BxATpWDsZchnZERnYmEyVW4wYWc"
+        //      "children": [
+        //   {
+        //     "name": "Rob",
+        //     "parent": "Level 4: A",
+        //      "url":  "https://drive.google.com/drive/folders/0BxATpWDsZchnZERnYmEyVW4wYWc"
+            
+            
+        //   },]
+          },
+          
+          {
+            "name": "MoCap",
+            "parent": "Level 3: A",
+               "url":  "https://drive.google.com/drive/folders/0BxATpWDsZchnOXpqeFA5TE80SkU"
+        //      "children": [
+        //   {
+        //     "name": "Rob",
+        //     "parent": "Level 4: A",
+        //      "url":  "https://drive.google.com/drive/folders/0BxATpWDsZchnOXpqeFA5TE80SkU"
+            
+            
+        //   },]
+          }
+          
+          ]
+          },//RD
+          
+          
+          
+          {
+            "name": "SafeSite",
+            "parent": "Level 2: A",
+             "children": [
+           {
+             "name": "SafeSite - Framework",
+             "parent": "Level 4: A",
+             "url":"https://docs.google.com/presentation/d/1zxHYuW6bLRWerd3l0NfGD_tjOdjrj6aP5DJJ5_-9aMg/edit"
+            
+           },
+           {
+             "name": "RoadMap",
+             "parent": "Level 4: A",
+             "url":"https://docs.google.com/presentation/d/1n1NIth10FSk_l0bM8Ri1z1NUHKetgT8YH0Xd-d3S1Bs/edit#slide=id.gcc8cd0824_0_14"
+            
+           },
+           
+
+           
+           
+
+
+          ]
+          
+          },//BizDev
+          
+          
+          {
+            "name": "SafeScan",
+            "parent": "Level 2: A",
+            "children": [
+           {
+             "name": "SafeScan - Framework",
+             "parent": "Level 4: A",
+             "url":"https://docs.google.com/presentation/d/1ChOnWBMtpC8oB39A2wlueobUFCYz31HUJ2a71URWoTw/edit"
+            
+           },
+           
+            {
+             "name": "Features",
+             "parent": "Level 4: A",
+             "url":"https://humancondition.aha.io/products/SCAN/feature_cards"
+            
+           },
+          // {
+          //   "name": "Mirek",
+          //   "parent": "Level 4: A",
+          //   // "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            
+          // },
+
+
+          ]
+          },//Creative
+        
+        
+          {
+            "name": "HCS Ecosystem",
+            "parent": "Level 2: A",
+            'url':' https://docs.google.com/presentation/d/1oS2BEaAduCAX_mB7ZToHHPazd7a3kOwklW1arrE7VWQ/edit',
+              "children": [
+          {
+            "name": "framework",
+            "parent": "Level 3: A",
+            'url':'https://docs.google.com/presentation/d/1nQH9eErO-TtOYZiNpIEorCzhCv3gL0aZVMbqMRM1k9s/edit',
+            
+            
+          },
+        //   {
+        //     "name": "digital models",
+        //     "parent": "Level 3: A",
+        //     'url':'https://docs.google.com/presentation/d/1nQH9eErO-TtOYZiNpIEorCzhCv3gL0aZVMbqMRM1k9s/edit',
+            
+        //   },
+        //  {
+        //     "name": "vdc",
+        //     "parent": "Level 3: A",
+            
+        //   },
+        //           {
+        //     "name": "visualization",
+        //     "parent": "Level 3: A",
+            
+        //   },
+          
+          
+          ]
+            
+          },//Digital Architecture
+        //   {
+        //     "name": "Financial",
+        //     "parent": "Level 2: A",
+        //     "children": [
+        //   {
+        //     "name": "CFO",
+        //     "parent": "Level 4: A",
+        //     //"url":"https://www.linkedin.com/pub/adam-bellin/17/9a8/75b"
+        //           "children": [
+        //   {
+        //     "name": "Bob",
+        //     "parent": "Level 4: A",
+            
+        //   },]
+            
+        //   },
+
+        //   {
+        //     "name": "Models",
+        //     "parent": "Level 4: A",
+        //     // "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            
+        //   },
+        //   {
+        //     "name": "Analysis",
+        //     "parent": "Level 4: A",
+        //     // "url":"https://www.linkedin.com/in/sergeyvikhlyantsev"
+            
+        //   },
+
+        //   ]
+        //   },//Financial
+        //   {
+        //     "name": "Operations",
+        //     "parent": "Level 2: A"
+        //   },//Operations
+          
+          
+          
+         ]
+      },
+      {
+        "name": "HC Labs",
+        "parent": "Top Level",
+        "url": "http://www.humanconditionlabs.com/#intro",
+         "children": [
+          {
+            "name": "Bizmodel",
+            "parent": "Level 2: A",
+            //'url':'https://docs.google.com/presentation/d/1cUMvCHIzu4yKYOEy1p_bkpLPhoUzSF3XdcOu-TIoKr0/edit#slide=id.ge75470bb3_0_747'
+            "children": [
+          {
+            "name": "Sketch",
+            "parent": "Level 3: A",
+            'url':'https://docs.google.com/presentation/d/1cUMvCHIzu4yKYOEy1p_bkpLPhoUzSF3XdcOu-TIoKr0/edit#slide=id.ge75470bb3_0_747',
+            
+            
+          },
+          ]
+            
+            
+          },
+          
+          {
+            "name": "EZ Edison",
+            "parent": "Level 2: A",
+            'url':'https://drive.google.com/a/humanconditionglobal.com/folderview?id=0B-i6DGCOEzSCS1F0dHFXZHRsMW8&usp=drivesdk&ddrp=1#'
+          },
+        //   {
+        //     "name": "Moral Courage",
+        //     "parent": "Level 2: A",
+        //     'url':'http://www.moralcourage.org/homepage/'
+        //   }
+          
+        ]
+      },
+      
+            {
+        "name": "Weekly",
+        "parent": "Top Level",
+        "url": "https://drive.google.com/a/humanconditionglobal.com/folderview?id=0BzzxMkoHT-9nd242TzRBam1GVGM&usp=drivesdk&ddrp=1#",
+        // "children": [
+        //   {
+        //     "name": "Bizmodel",
+        //     "parent": "Level 2: A",
+        //     //'url':'https://docs.google.com/presentation/d/1cUMvCHIzu4yKYOEy1p_bkpLPhoUzSF3XdcOu-TIoKr0/edit#slide=id.ge75470bb3_0_747'
+        //     "children": [
+        //   {
+        //     "name": "Sketch",
+        //     "parent": "Level 3: A",
+        //     'url':'https://docs.google.com/presentation/d/1cUMvCHIzu4yKYOEy1p_bkpLPhoUzSF3XdcOu-TIoKr0/edit#slide=id.ge75470bb3_0_747',
+            
+            
+        //   },
+        //   ]
+            
+            
+        //   },
+          
+        //   {
+        //     "name": "EZ Edison",
+        //     "parent": "Level 2: A",
+        //     'url':'https://drive.google.com/a/humanconditionglobal.com/folderview?id=0B-i6DGCOEzSCS1F0dHFXZHRsMW8&usp=drivesdk&ddrp=1#'
+        //   },
+        // //   {
+        // //     "name": "Moral Courage",
+        // //     "parent": "Level 2: A",
+        // //     'url':'http://www.moralcourage.org/homepage/'
+        // //   }
+          
+        // ]
+      }
+      
+      
+    ]
+  }
+];
+
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 20, right: 300, bottom: 20, left:300},
+	width = 1200 - margin.right - margin.left,
+	height = 500 - margin.top - margin.bottom;
+	
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click);
+
+  nodeEnter.append("circle")
+	  .attr("r", 1e-6)
+	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6)
+	  .on("click", function(d) { window.open(d.url); });;
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", 5)
+	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
+
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", function(d) {
+		var o = {x: source.x0, y: source.y0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {x: source.x, y: source.y};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.x0 = d.x;
+	d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+  function collapse(d) {
+    if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+  }
+
+  root.children.forEach(collapse);
+  update(root);
+
+
+
+</script> 
+<a href="https://www.moh.io/mohiomap/app.php#cn?Mohiomap&en?Google%7Croot&en?Google%7C0BwfKkj-6pO1gfk9va2pkQVpodnBZcVIzVzV3YXdFQkwxMmI0a09OMVI4WUZFblhtaFBTc2M&en?Google%7C0BwfKkj-6pO1gfnVFazJqeVpqbjA1YnNmbGREekw1eVBwdk9VdDRsWm42NmMzcEVscDVWUXM&en?Google%7C0B640nk3FrNfHR2dPZUllYVcwTGc&en?Google%7C0BwfKkj-6pO1gY09SNWpKLWxfaDQ&en?Google%7C0BzzxMkoHT-9nd242TzRBam1GVGM&en?Google%7C0BwfKkj-6pO1gfjlrMGtxS2xlZWNZVTA1XzE3QzIzLUdDclhlRUs0WWhtZFBqdThtUXBHb1E&en?Google%7C0B3WhQhojY6Udfk9vYmpCYVFJMkY3ZzFkdURZWnVQTkVYZ3dhd3FVTDNSTzA2VVVzbzR0TXM&en?Google%7C0B3wF6y4HqYwYR2IyQ0UwZjllTDA&en?Google%7C0BzzxMkoHT-9ncnNhQVB6ekltNDA&en?Google%7C0B-i6DGCOEzSCS1F0dHFXZHRsMW8" target="_blank"><div class = 'center' ><font size="1" color="grey " >data map</font></div></a>
+<a href="https://ide.c9.io/olegmoshkovich1/portfolio" target="_blank"><div class = 'center' ><font size="1" color="grey " >development</font></div></a>
+
+<!--<a href="/hc-analytics"><div class = 'center' ><font size="1" color="grey ">HC - Analytics</font></div></a>-->
+    
+</body>
+
+
+</html>
+
+
+
+
+

@@ -10,7 +10,7 @@ body {
 .axis line {
   fill: none;
   stroke: #000;
-  shape-rendering: crispEdges;
+  /*shape-rendering: crispEdges;*/
 }
 
 .x.axis path {
@@ -28,7 +28,7 @@ body {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
+var margin = {top: 20, right: 20, bottom: 30, left: 100},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
@@ -79,7 +79,7 @@ d3.tsv("data.tsv", function(error, data) {
       .call(yAxis)
     .append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 6)
+      .attr("y", 1)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Price ($)");

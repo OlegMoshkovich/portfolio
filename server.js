@@ -74,6 +74,10 @@ app.get('/important', function(req,res){
 app.get('/google', function(req,res){
         res.sendfile(__dirname + '/public/google.html');
 });
+app.get('/google_chart', function(req,res){
+        res.sendfile(__dirname + '/public/google_chart.html');
+});
+
 
 
 

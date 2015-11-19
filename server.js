@@ -1,23 +1,28 @@
 var fs = require('fs');
+var express = require("express");
+var app = express();
+
 var readline = require('readline');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
+var bodyParser= require('body-parser');
+var parseUrlencoded = bodyParser.urlencoded({ extended: false });
 
 var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'drive-nodejs-quickstart.json';
 
-
-
-
-
-
-var express = require("express");
-
-var app = express();
-
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
+
+
+
+
+
+
 
 app.get('/', function(req,res){
        res.sendfile(__dirname + '/public/hello.html');
@@ -70,6 +75,16 @@ app.get('/hcs', function(req,res){
 app.get('/important', function(req,res){
         res.sendfile(__dirname + '/public/hc_important.html');
 });
+
+app.post('/important',parseUrlencoded, function(req,res){
+        
+        var input = req.body;
+console.log("i am hitting post endpoint");
+res.json();
+    
+    
+});
+
 
 app.get('/google', function(req,res){
         res.sendfile(__dirname + '/public/google.html');

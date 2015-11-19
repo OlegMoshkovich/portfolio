@@ -58,7 +58,23 @@
     
     
     <div class = 'center'> IMPORTANT </div>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <div class = 'center'><a href="/important"><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
+     
+     
+     <!--<div class = 'center' id = 'input' style="display: none;"> -->
+     
+     <form class = 'center' id = "edit" style="display: none;">
+            <input type="text" name = 'branch' placeholder = 'branch'>
+            <input type="text" name = 'node' placeholder = 'node'>
+            <input type="text" name = 'link' placeholder = 'link'>
+             <input type="submit" value="add">
+        
+     </form>
+     
+    <!--</div>-->
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
     <script src="js/d3/d3.js"></script>
 
@@ -68,6 +84,8 @@
     
 
 var treeData = [
+  
+  
   {
     "name": "Global",
     "parent": "null",
@@ -431,9 +449,54 @@ function click(d) {
   root.children.forEach(collapse);
   update(root);
 
-
-
 </script> 
+
+<script>
+  // Pulls an image from the internet and populates surprise div
+               
+                $(document).ready(function(){
+                $('#trigger').on('click',function(){
+                  
+                console.log("I am clicked");
+                
+                    //$(this).empty().append('Surprise').css('color','red ').css('font-size','300%');
+                 $( "#edit" ).toggle( "slow", function() {
+                 });
+                 
+                    var img = $("<img />").attr('src', 'https://s-media-cache-ak0.pinimg.com/736x/3e/b8/c3/3eb8c354dcc284c75fed7edfef6eaa63.jpg')
+                        .load(function() {
+                
+                    if (!this.complete || typeof this.naturalWidth == "undefine" || this.naturalWidth == 10) {
+                        alert('broken image!');
+                    } else {
+                        $("#surprise").empty().append(img);
+                    }
+                        });
+                });
+                
+                 $("#edit").on('submit',function(){
+                    // $('#inputName').empty();
+                    // $('#direction').show();
+                 var formData = $(this).serialize();
+                 alert(formData)
+                //mechanism that is responsible for posting location form data to the server 
+                $.ajax({
+                  type: 'POST',url: '/important', data: formData
+                }).done(function(inputName){
+                    display(inputName[0]);
+                });
+                 event.preventDefault();
+                 
+                 
+                 $('#edit').trigger("reset");
+                });
+                
+                
+                });
+</script>
+
+
+
 <a href="https://calendar.google.com/calendar/render#main_7" target="_blank"><div class = 'center' ><font size="1" color="grey " >calendar</font></div></a>
 
 <a href="https://app.asana.com/0/44369498078242/list" target="_blank"><div class = 'center' ><font size="1" color="grey " >tasks</font></div></a>
@@ -444,6 +507,13 @@ function click(d) {
 
 
 <!--<a href="/hc-analytics"><div class = 'center' ><font size="1" color="grey ">HC - Analytics</font></div></a>-->
+    
+    <div id = 'report'></div>
+    <!--<div id = 'surprise'></div>-->
+    
+    
+   
+    <div class = 'center' id = 'trigger'><font size="1" color="grey " >edit</font></div> 
     
 </body>
 

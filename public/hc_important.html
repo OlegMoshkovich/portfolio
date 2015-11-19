@@ -5,14 +5,10 @@
 <title>Human condiiton</title>
   <link rel="stylesheet" type="text/css"  href="css/hc.css">
 
-
     <meta charset="UTF-8">
     <meta content="utf-8" http-equiv="encoding">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-
-    
+    <html xmlns:xlink="http://www.w3.org/1999/xlink">  
     <!-- Favicons
     ================================================== -->
     <link rel="shortcut icon" href="img/favicon-square.png" type="image/x-icon">
@@ -20,65 +16,53 @@
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
     
-
-
 <style>
 
+/*a:link {*/
+/*    text-decoration: none;*/
+/*}*/
 .node {
   cursor: pointer;
 }
-
 .node circle {
-  /*fill: white;*/
   stroke: grey;
   stroke-width: 1.5px;
 }
-
 .node text {
   font: 15px sans-serif;
   font-family: 'Roboto', sans-serif;
 }
-
 .link {
   fill: none;
   stroke: #ccc;
   stroke-width: 1.5px;
 }
-
 </style>
-    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+<!--Set up Scripts-->
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script src="js/d3/d3.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 
 </head>
 
+
+
 <body>
-    
-    <html xmlns:xlink="http://www.w3.org/1999/xlink">
-
+  
 </html>
+    <div class = 'center'>IMPORTANT</div>
+    <!--<div class = 'center'><a href="/important">IMPORTANT</a> </div>-->
+    <div class = 'center' id = 'trigger'><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
     
-    
-    <div class = 'center'> IMPORTANT </div>
-    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <div class = 'center'><a href="/important"><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
-     
-     
-     <!--<div class = 'center' id = 'input' style="display: none;"> -->
-     
-     <form class = 'center' id = "edit" style="display: none;">
+    <form class = 'center' id = "edit" style="display: none;">
             <input type="text" name = 'branch' placeholder = 'branch'>
-            <input type="text" name = 'node' placeholder = 'node'>
-            <input type="text" name = 'link' placeholder = 'link'>
-             <input type="submit" value="add">
-        
+            <input type="text" name = 'node'   placeholder = 'node'>
+            <input type="text" name = 'link'   placeholder = 'link'>
+            <input type="submit" value="add">
      </form>
-     
-    <!--</div>-->
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-    <script src="js/d3/d3.js"></script>
-
-
 
 <script>
     
@@ -98,6 +82,8 @@ var treeData = [
           {
             "name": "CitiField",
             "parent": "Level 2: A",
+            "url":  "https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHRDg3aHV3TnZwaGs",
+            
             "children": [
           {
             "name": "Brief",
@@ -133,6 +119,24 @@ var treeData = [
             "name": "Test Plan",
             "parent": "Level 3: A",
                "url":  "https://docs.google.com/document/d/1Fm5qaMEi8GsX8nNpRFwvhNwuTCnGZ_4pnX6U2brr-C8/edit#heading=h.u91jh31y3h9w"
+          },
+          
+           {
+            "name": "CPF Strategy",
+            "parent": "Level 3: A",
+               "url":  "hhttps://docs.google.com/presentation/d/17RpG9dUyOfr57bTH-qyb0mSZGMsUbvPEDBAJbXxLCFk/edit#slide=id.gd91ad9c9f_0_23"
+          },
+          
+          {
+            "name": "CPF Conntent POC",
+            "parent": "Level 3: A",
+               "url":  "https://docs.google.com/spreadsheets/d/1ejcWkBE-vfW9yHO08OQ17YYJhVlcoZyg23zBOrR48SY/edit#gid=0"
+          },
+          
+          {
+            "name": "CPF Content gathering Infrastructure ",
+            "parent": "Level 3: A",
+               "url":  "https://zapier.com/app/editor/6033264/nodes/6033265/fields"
           }
 
           ]
@@ -450,31 +454,22 @@ function click(d) {
   update(root);
 
 </script> 
-
+<!--D3 Script-->
 <script>
-  // Pulls an image from the internet and populates surprise div
-               
                 $(document).ready(function(){
-                $('#trigger').on('click',function(){
-                  
-                console.log("I am clicked");
-                
-                    //$(this).empty().append('Surprise').css('color','red ').css('font-size','300%');
-                 $( "#edit" ).toggle( "slow", function() {
-                 });
-                 
-                    var img = $("<img />").attr('src', 'https://s-media-cache-ak0.pinimg.com/736x/3e/b8/c3/3eb8c354dcc284c75fed7edfef6eaa63.jpg')
-                        .load(function() {
-                
-                    if (!this.complete || typeof this.naturalWidth == "undefine" || this.naturalWidth == 10) {
-                        alert('broken image!');
-                    } else {
-                        $("#surprise").empty().append(img);
-                    }
+                    $('#trigger').on('click',function(){
+                        $( "#edit" ).toggle( "slow", function() {
                         });
+                    });
                 });
-                
-                 $("#edit").on('submit',function(){
+</script>
+<!-- Jquerry Script-->
+<script>
+  
+  
+  $("#edit").on('submit',function(){
+    
+     $(document).ready(function(){
                     // $('#inputName').empty();
                     // $('#direction').show();
                  var formData = $(this).serialize();
@@ -493,31 +488,21 @@ function click(d) {
                 
                 
                 });
+                
 </script>
+<!-- Ajax Script-->
 
 
-
+<!--Bottom links-->
 <a href="https://calendar.google.com/calendar/render#main_7" target="_blank"><div class = 'center' ><font size="1" color="grey " >calendar</font></div></a>
-
 <a href="https://app.asana.com/0/44369498078242/list" target="_blank"><div class = 'center' ><font size="1" color="grey " >tasks</font></div></a>
-
-
 <a href="https://www.moh.io/mohiomap/app.php#cn?Mohiomap&en?Google%7Croot&en?Google%7C0BwfKkj-6pO1gfk9va2pkQVpodnBZcVIzVzV3YXdFQkwxMmI0a09OMVI4WUZFblhtaFBTc2M&en?Google%7C0BwfKkj-6pO1gfnVFazJqeVpqbjA1YnNmbGREekw1eVBwdk9VdDRsWm42NmMzcEVscDVWUXM&en?Google%7C0B640nk3FrNfHR2dPZUllYVcwTGc&en?Google%7C0BwfKkj-6pO1gY09SNWpKLWxfaDQ&en?Google%7C0BzzxMkoHT-9nd242TzRBam1GVGM&en?Google%7C0BwfKkj-6pO1gfjlrMGtxS2xlZWNZVTA1XzE3QzIzLUdDclhlRUs0WWhtZFBqdThtUXBHb1E&en?Google%7C0B3WhQhojY6Udfk9vYmpCYVFJMkY3ZzFkdURZWnVQTkVYZ3dhd3FVTDNSTzA2VVVzbzR0TXM&en?Google%7C0B3wF6y4HqYwYR2IyQ0UwZjllTDA&en?Google%7C0BzzxMkoHT-9ncnNhQVB6ekltNDA&en?Google%7C0B-i6DGCOEzSCS1F0dHFXZHRsMW8" target="_blank"><div class = 'center' ><font size="1" color="grey " >data map</font></div></a>
 <a href="https://ide.c9.io/olegmoshkovich1/portfolio" target="_blank"><div class = 'center' ><font size="1" color="grey " >development</font></div></a>
+<!--<div class = 'center' id = 'trigger'><font size="1" color="grey " >edit</font></div> -->
 
 
-<!--<a href="/hc-analytics"><div class = 'center' ><font size="1" color="grey ">HC - Analytics</font></div></a>-->
-    
-    <div id = 'report'></div>
-    <!--<div id = 'surprise'></div>-->
-    
-    
-   
-    <div class = 'center' id = 'trigger'><font size="1" color="grey " >edit</font></div> 
-    
+
 </body>
-
-
 </html>
 
 

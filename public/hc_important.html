@@ -63,6 +63,7 @@
             <input type="text" name = 'link'   placeholder = 'link'>
             <input type="submit" value="add">
      </form>
+  
 
 <script>
     
@@ -140,7 +141,7 @@ var treeData = [
           }
 
           ]
-          },//RD
+          },//SafeScan
           
           {
             "name": "SafeSite",
@@ -159,7 +160,7 @@ var treeData = [
            },
            
           ]
-          },//BizDev
+          },//SafeSite
           {
             "name": "SafeScan",
             "parent": "Level 2: A",
@@ -178,7 +179,22 @@ var treeData = [
            },
 
           ]
-          },//Creative
+          },//SafeScan
+          
+          {
+            "name": "RC Tool",
+            "parent": "Level 2: A",
+             "children": [
+           {
+             "name": "RC Tool - Framework",
+             "parent": "Level 4: A",
+             "url":"https://docs.google.com/presentation/d/10unixqUM9UWhFAHIN7fWVHADUxExWJdi0in7nGbwVEs/edit#slide=id.p"
+           },
+           
+           
+          ]
+          },//RC Tool
+          
         
         
           {
@@ -247,7 +263,15 @@ var treeData = [
             "name": "Open Technology Exchange",
             "parent": "Level 2: A",
             'url':'https://docs.google.com/presentation/d/10ig-wJr_R9of3bTtlCmbGAbRYBbBtG-sVbYV384D8Nc/edit#slide=id.ge9919e1b7_0_3'
+          },
+          
+          {
+            "name": "Documented Sessions",
+            "parent": "Level 2: A",
+            'url':'https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHSFJJMHVmUFJoRWs'
           }
+          
+          
           
         ]
       },
@@ -394,7 +418,9 @@ function update(source) {
 	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
 	  .text(function(d) { return d.name; })
 	  .style("fill-opacity", 1e-6)
-	  .on("click", function(d) { window.open(d.url); });;
+	  .on("click", function(d) { 
+	    debugger;
+	    window.open(d.url); });;
 
   // Transition nodes to their new position.
   var nodeUpdate = node.transition()
@@ -489,25 +515,24 @@ function click(d) {
 <!-- Jquerry Script-->
 <script>
   
-  
+   $(document).ready(function(){
   $("#edit").on('submit',function(){
     
-     $(document).ready(function(){
-                    // $('#inputName').empty();
-                    // $('#direction').show();
+    
+       
                  var formData = $(this).serialize();
-                 alert(formData)
+                 alert(formData + "hello");
                 //mechanism that is responsible for posting location form data to the server 
                 $.ajax({
                   type: 'POST',url: '/important', data: formData
-                }).done(function(inputName){
-                    display(inputName[0]);
+                }).done(function(inputData){
+                    alert(inputData);
                 });
                  event.preventDefault();
-                 
-                 
                  $('#edit').trigger("reset");
                 });
+                
+                
                 
                 
                 });

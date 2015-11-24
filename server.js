@@ -78,12 +78,10 @@ app.get('/important', function(req,res){
 });
 
 app.post('/important',parseUrlencoded, function(req,res){
-        
         var input = req.body;
-console.log("i am hitting post endpoint");
-res.json();
-    
-    
+        console.log(input);
+        var inputData = [input.branch, input.node, input.link];
+        res.json(inputData);
 });
 
 

@@ -1,0 +1,246 @@
+{
+   "name":"Global",
+   "parent":"null",
+   "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHM3lJeXFELTVBc0k",
+   "children":[
+      {
+         "name":"Safety",
+         "parent":"Top Level",
+         "children":[
+            {
+               "name":"CitiField",
+               "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHRDg3aHV3TnZwaGs",
+               "children":[
+                  {
+                     "name":"Brief",
+                     "url":"https://docs.google.com/presentation/d/1Nf15hgfCkXow7-kDcFEV91TsaPosupyPPgbB3i6o66M/edit#slide=id.ge4141adb5_0_31"
+                  },
+                  {
+                     "name":"Pilot areas",
+                     "parent":"Level 3: A",
+                     "url":"https://drive.google.com/drive/folders/0B5MfySBN8MA4elRlQVdXQUhuV0k"
+                  },
+                  {
+                     "name":"Schedule",
+                     "parent":"Level 3: A",
+                     "url":"https://app.asana.com/0/61659664942943/calendar"
+                  },
+                  {
+                     "name":"NOC",
+                     "parent":"Level 3: A",
+                     "url":"https://drive.google.com/drive/folders/0BxATpWDsZchnZERnYmEyVW4wYWc"
+                  },
+                  {
+                     "name":"MoCap",
+                     "parent":"Level 3: A",
+                     "url":"https://drive.google.com/drive/folders/0BxATpWDsZchnOXpqeFA5TE80SkU"
+                  },
+                  {
+                     "name":"Test Plan",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/document/d/1Fm5qaMEi8GsX8nNpRFwvhNwuTCnGZ_4pnX6U2brr-C8/edit#heading=h.u91jh31y3h9w"
+                  },
+                  {
+                     "name":"CPF Strategy",
+                     "parent":"Level 3: A",
+                     "url":"hhttps://docs.google.com/presentation/d/17RpG9dUyOfr57bTH-qyb0mSZGMsUbvPEDBAJbXxLCFk/edit#slide=id.gd91ad9c9f_0_23"
+                  },
+                  {
+                     "name":"CPF Conntent POC",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/spreadsheets/d/1ejcWkBE-vfW9yHO08OQ17YYJhVlcoZyg23zBOrR48SY/edit#gid=0"
+                  },
+                  {
+                     "name":"CPF Content gathering Infrastructure ",
+                     "parent":"Level 3: A",
+                     "url":"https://zapier.com/app/editor/6033264/nodes/6033265/fields"
+                  }
+               ]
+            },
+            {
+               "name":"SafeSite",
+               "parent":"Level 2: A",
+               "children":[
+                  {
+                     "name":"SafeSite - Framework",
+                     "parent":"Level 4: A",
+                     "url":"https://docs.google.com/presentation/d/1zxHYuW6bLRWerd3l0NfGD_tjOdjrj6aP5DJJ5_-9aMg/edit"
+                  },
+                  {
+                     "name":"RoadMap",
+                     "parent":"Level 4: A",
+                     "url":"https://docs.google.com/presentation/d/1n1NIth10FSk_l0bM8Ri1z1NUHKetgT8YH0Xd-d3S1Bs/edit#slide=id.gcc8cd0824_0_14"
+                  }
+               ]
+            },
+            {
+               "name":"SafeScan",
+               "parent":"Level 2: A",
+               "children":[
+                  {
+                     "name":"SafeScan - Framework",
+                     "parent":"Level 4: A",
+                     "url":"https://docs.google.com/presentation/d/1ChOnWBMtpC8oB39A2wlueobUFCYz31HUJ2a71URWoTw/edit"
+                  },
+                  {
+                     "name":"Features",
+                     "parent":"Level 4: A",
+                     "url":"https://humancondition.aha.io/products/SCAN/feature_cards"
+                  }
+               ]
+            },
+            {
+               "name":"RC Tool",
+               "parent":"Level 2: A",
+               "children":[
+                  {
+                     "name":"RC Tool - Framework",
+                     "parent":"Level 4: A",
+                     "url":"https://docs.google.com/presentation/d/10unixqUM9UWhFAHIN7fWVHADUxExWJdi0in7nGbwVEs/edit#slide=id.p"
+                  }
+               ]
+            },
+            {
+               "name":"HCS Ecosystem",
+               "parent":"Level 2: A",
+               "url":" https://docs.google.com/presentation/d/1oS2BEaAduCAX_mB7ZToHHPazd7a3kOwklW1arrE7VWQ/edit",
+               "children":[
+                  {
+                     "name":"framework",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/1nQH9eErO-TtOYZiNpIEorCzhCv3gL0aZVMbqMRM1k9s/edit",
+
+                  },
+                  {
+                     "name":"System Architecture",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/10CGy03zFQiy2WlvEzn7_5rOiXT95dRODVL05Ac5Hquk/edit#slide=id.p"
+                  },
+
+               ]
+            },
+            {
+               "name":"Product",
+               "parent":"Level 2: A",
+               "url":" https://docs.google.com/presentation/d/1oS2BEaAduCAX_mB7ZToHHPazd7a3kOwklW1arrE7VWQ/edit",
+               "children":[
+                  {
+                     "name":"Content",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/1uo9UojqTrE9_R4EK_Xv-qjAt83dLnNanQ_krCZc7YQA/edit#slide=id.gd905fccb3_0_46"
+                  },
+                  {
+                     "name":"CTO Binder",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/10CGy03zFQiy2WlvEzn7_5rOiXT95dRODVL05Ac5Hquk/edit#slide=id.p"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name":"Labs",
+         "parent":"Top Level",
+         "url":"https://drive.google.com/drive/u/0/folders/0B3WhQhojY6Udfk9vYmpCYVFJMkY3ZzFkdURZWnVQTkVYZ3dhd3FVTDNSTzA2VVVzbzR0TXM",
+         "children":[
+            {
+               "name":"Bizmodel",
+               "parent":"Level 2: A",
+               "url":"https://docs.google.com/presentation/d/1cUMvCHIzu4yKYOEy1p_bkpLPhoUzSF3XdcOu-TIoKr0/edit#slide=id.ge75470bb3_0_747"
+            },
+            {
+               "name":"EZ Edison",
+               "parent":"Level 2: A",
+               "url":"https://drive.google.com/a/humanconditionglobal.com/folderview?id=0B-i6DGCOEzSCS1F0dHFXZHRsMW8&usp=drivesdk&ddrp=1#"
+            },
+            {
+               "name":"Open Technology Exchange",
+               "parent":"Level 2: A",
+               "url":"https://docs.google.com/presentation/d/10ig-wJr_R9of3bTtlCmbGAbRYBbBtG-sVbYV384D8Nc/edit#slide=id.ge9919e1b7_0_3"
+            },
+            {
+               "name":"Documented Sessions",
+               "parent":"Level 2: A",
+               "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHSFJJMHVmUFJoRWs"
+            }
+         ]
+      },
+      {
+         "name":"Weekly",
+         "parent":"Top Level",
+         "url":"https://drive.google.com/a/humanconditionglobal.com/folderview?id=0BzzxMkoHT-9nd242TzRBam1GVGM&usp=drivesdk&ddrp=1#",
+         "children":[
+            {
+               "name":"Archive",
+               "parent":"Level 2: A",
+
+            }
+         ]
+      },
+      {
+         "name":"Research",
+         "parent":"Top Level",
+         "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHRFNUWTM1RWhaNEk",
+         "children":[
+            {
+               "name":"Cloud",
+               "parent":"Level 2: A",
+               "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHcmpOLWs0ZFFIdEk",               
+               "children":[
+                  {
+                     "name":"Container",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/1fgf-v6u8vmOaD8ptXD2pz5vjoOZ2wpkHF7uQcrdqLkA/edit",
+
+                  },
+                  {
+                     "name":"Microsoft",
+                     "parent":"Level 3: A",
+                     "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHVVphZi0xQks5WDA",
+
+                  }
+               ]
+            },
+            {
+               "name":"Financial",
+               "parent":"Level 2: A",
+               "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHcmpOLWs0ZFFIdEk",               
+               "children":[
+                  {
+                     "name":"Aggregation",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/1e8jKhuXodRgcSaysBL6g7R_GPFZjG6Gj2l-dKfWhuBs/edit#slide=id.p",
+
+                  }
+               ]
+            },
+            {
+               "name":"3D Scan",
+               "parent":"Level 2: A",
+               "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHcmpOLWs0ZFFIdEk",
+               "children":[
+                  {
+                     "name":"Aggregation",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/1WqOp1zcbNT5-JkLYczVRkXCkNGjXzFL6EqJyPvddSfc/edit",
+
+                  }
+               ]
+            },
+            {
+               "name":"Product",
+               "parent":"Level 2: A",
+               "url":"https://drive.google.com/drive/u/0/folders/0B8ByQVXWsje5QkVTMjRrTnV6d1k",
+               "children":[
+                  {
+                     "name":"Definition",
+                     "parent":"Level 3: A",
+                     "url":"https://docs.google.com/presentation/d/10QGblru-2IGcbCU7u6flVRe1uCEKtbhVhPZyZL1Ue8c/edit#slide=id.gd8e89c516_0_11",
+
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

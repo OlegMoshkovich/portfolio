@@ -77,11 +77,20 @@ app.get('/important', function(req,res){
         res.sendfile(__dirname + '/public/hc_important.html');
 });
 
+app.get('/important/tree', function(req, res){
+        var file = fs.readFileSync('./tree2.json').toString();
+        res.send(JSON.stringify(file));
+})
+
 app.post('/important',parseUrlencoded, function(req,res){
         var input = req.body;
         console.log(input);
         var inputData = [input.branch, input.node, input.link];
         res.json(inputData);
+});
+
+app.get('/cto', function(req,res){
+        res.sendfile(__dirname + '/public/cto.html');
 });
 
 

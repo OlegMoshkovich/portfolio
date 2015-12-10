@@ -93,6 +93,10 @@ app.get('/google_chart', function(req,res){
 });
 
 
+app.get('/voc', function(req,res){
+        res.sendfile(__dirname + '/public/voc.html');
+});
+
 
 
 

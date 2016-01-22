@@ -97,7 +97,9 @@ app.get('/voc', function(req,res){
         res.sendfile(__dirname + '/public/voc.html');
 });
 
-
+app.get('/test', function(req,res){
+        res.sendfile(__dirname + '/public/jsonTest.html');
+});
 
 
 

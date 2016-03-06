@@ -84,6 +84,17 @@ app.post('/important',parseUrlencoded, function(req,res){
         res.json(inputData);
 });
 
+app.get('/61B', function(req,res){
+        res.sendfile(__dirname + '/public/hc_61B_map.html');
+});
+
+app.post('/61B',parseUrlencoded, function(req,res){
+        var input = req.body;
+        console.log(input);
+        var inputData = [input.branch, input.node, input.link];
+        res.json(inputData);
+});
+
 
 app.get('/google', function(req,res){
         res.sendfile(__dirname + '/public/google.html');

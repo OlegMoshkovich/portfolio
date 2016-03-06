@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<title>Human condiiton</title>
+  <link rel="stylesheet" type="text/css"  href="css/hc.css">
+
+    <meta charset="UTF-8">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <html xmlns:xlink="http://www.w3.org/1999/xlink">  
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon-square.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    
+<style>
+
+/*a:link {*/
+/*    text-decoration: none;*/
+/*}*/
+.node {
+  cursor: pointer;
+}
+.node circle {
+  stroke: grey;
+  stroke-width: 1.5px;
+}
+.node text {
+  font: 15px sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+</style>
+
+<!--Set up Scripts-->
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script src="js/d3/d3.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+</head>
+
+
+
+<body>
+  
+</html>
+    <div class = 'center'>IMPORTANT</div>
+    <!--<div class = 'center'><a href="/important">IMPORTANT</a> </div>-->
+    <div class = 'center' id = 'trigger'><img src="/img/hc/HC_logo.png" width = 50px></img></a></div>
+    
+    <form class = 'center' id = "edit" style="display: none;">
+            <input type="text" name = 'branch' placeholder = 'branch'>
+            <input type="text" name = 'node'   placeholder = 'node'>
+            <input type="text" name = 'link'   placeholder = 'link'>
+            <input type="submit" value="add">
+     </form>
+  
+
+<script>
+    
+
+var treeData = [
+  
+  
+  {
+    "name": "61B",
+    "parent": "null",
+    "url":"https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHM3lJeXFELTVBc0k",
+    "children": [
+      {
+        "name": "HCLabs",
+        "parent": "Top Level",
+        "url": "https://drive.google.com/drive/folders/0B640nk3FrNfHbzJoeU50N0RKbmM",
+        "children": [
+          {
+            "name": "Concept",
+            "parent": "Level 2: A",
+            "url": "https://docs.google.com/presentation/d/1cUMvCHIzu4yKYOEy1p_bkpLPhoUzSF3XdcOu-TIoKr0/edit",
+      },
+        
+          
+          
+          
+        ]
+      },
+      {
+        "name": "Archtiecture",
+        "parent": "Top Level",
+        "url": "https://drive.google.com/drive/folders/0B640nk3FrNfHbzJoeU50N0RKbmM",
+        "children": [
+          {
+            "name": "Conceptual Direction",
+            "parent": "Level 2: A",
+            "url": "https://docs.google.com/presentation/d/1Di808ATRYlKOGZfMvKFk8B38xwVRcDOEIARRZ0Mz7VU/edit#slide=id.gc7c3ab16f_1_108",
+      },
+      
+             {
+            "name": "Pod Participants",
+            "parent": "Level 2: A",
+            "url": "https://docs.google.com/presentation/d/1Y-i3SzDYkb9gVMq0fEVontAuuxQP6kIdHpLLeeF_Qow/edit",
+      },
+                   {
+            "name": "Pod Organization",
+            "parent": "Level 2: A",
+            "url": "https://docs.google.com/presentation/d/1PCfueye7092LJTPWdc4XKVShqnidgMXQlRMn08boAxs/edit#slide=id.gdaf224ffa_0_0",
+      },
+      
+          {
+            "name": "Contracts",
+            "parent": "Level 2: A",
+            "url": "https://docs.google.com/presentation/d/1OaoVwmqr2vA9Df-NgoHZLf8YAhPYb75EngFnGxvK0Ig/edit#slide=id.p",
+      },
+         {
+            "name": "Drawings",
+            "parent": "Level 2: A",
+            "url": "https://drive.google.com/drive/u/0/folders/0B1qONpvERdekOENLdEYtbmJSTUk",
+      },
+              
+              
+              {
+            "name": "Overlay",
+            "parent": "Level 2: A",
+            "url": "https://drive.google.com/drive/u/0/folders/0B640nk3FrNfHR2ZXWW1qUkQzUkU",
+      },
+      
+             {
+            "name": "External Folder",
+            "parent": "Level 2: A",
+            "url": "https://drive.google.com/drive/u/0/folders/0BzIbw7pJVkhdTTdfNXdsOUx5RHM",
+      },
+      
+      
+                   {
+            "name": "Meeting Minutes",
+            "parent": "Level 2: A",
+            "url": "https://drive.google.com/drive/u/0/folders/0BzIbw7pJVkhdc3JGS25IOXEyQmM",
+      },
+      
+                         {
+            "name": "Daily Log",
+            "parent": "Level 2: A",
+            "url": "https://docs.google.com/presentation/d/1t_1po4MmiDMsxET_Az-xOOkmvUImJMZE-AC48cJhrVc/edit",
+      },
+          
+          
+          
+        ]
+      },
+                      
+    ]
+  }
+];
+
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 20, right: 300, bottom: 20, left:300},
+	width = 1200 - margin.right - margin.left,
+	height = 500 - margin.top - margin.bottom;
+	
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click);
+
+  nodeEnter.append("circle")
+	  .attr("r", 1e-6)
+	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6)
+	  .on("click", function(d) { 
+	    debugger;
+	    window.open(d.url); });;
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", 5)
+	  .style("fill", function(d) { return d._children ? "orange" : "#fff"; });
+
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", function(d) {
+		var o = {x: source.x0, y: source.y0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {x: source.x, y: source.y};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.x0 = d.x;
+	d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+  function collapse(d) {
+    if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+  }
+
+  root.children.forEach(collapse);
+  update(root);
+
+</script> 
+<!--D3 Script-->
+<script>
+                $(document).ready(function(){
+                    $('#trigger').on('click',function(){
+                        $( "#edit" ).toggle( "slow", function() {
+                        });
+                    });
+                });
+</script>
+<!-- Jquerry Script-->
+<script>
+  
+   $(document).ready(function(){
+  $("#edit").on('submit',function(){
+    
+    
+       
+                 var formData = $(this).serialize();
+                 alert(formData + "hello");
+                //mechanism that is responsible for posting location form data to the server 
+                $.ajax({
+                  type: 'POST',url: '/important', data: formData
+                }).done(function(inputData){
+                    alert(inputData);
+                });
+                 event.preventDefault();
+                 $('#edit').trigger("reset");
+                });
+                
+                
+                
+                
+                });
+                
+</script>
+<!-- Ajax Script-->
+
+
+<!--Bottom links-->
+<!--<a href="https://humanconditionglobal.atlassian.net/secure/Dashboard.jspa" target="_blank"><div class = 'center' ><font size="1" color="grey " >jira</font></div></a>-->
+    
+    
+    
+   <a href="https://www.instagram.com/hclabs/" target="_blank"> <div class = 'center' id = 'trigger'><img src="/img/hc/INSTA_logo_1.png" width = 50px></img></a></div>
+<!--<a href="https://calendar.google.com/calendar/render#main_7" target="_blank"><div class = 'center' ><font size="1" color="grey " >calendar</font></div></a>-->
+<!--<a href="https://app.asana.com/0/44369498078242/list" target="_blank"><div class = 'center' ><font size="1" color="grey " >tasks</font></div></a>-->
+<!--<a href="https://www.moh.io/mohiomap/app.php#cn?Mohiomap&en?Google%7Croot&en?Google%7C0BwfKkj-6pO1gfk9va2pkQVpodnBZcVIzVzV3YXdFQkwxMmI0a09OMVI4WUZFblhtaFBTc2M&en?Google%7C0BwfKkj-6pO1gfnVFazJqeVpqbjA1YnNmbGREekw1eVBwdk9VdDRsWm42NmMzcEVscDVWUXM&en?Google%7C0B640nk3FrNfHR2dPZUllYVcwTGc&en?Google%7C0BwfKkj-6pO1gY09SNWpKLWxfaDQ&en?Google%7C0BzzxMkoHT-9nd242TzRBam1GVGM&en?Google%7C0BwfKkj-6pO1gfjlrMGtxS2xlZWNZVTA1XzE3QzIzLUdDclhlRUs0WWhtZFBqdThtUXBHb1E&en?Google%7C0B3WhQhojY6Udfk9vYmpCYVFJMkY3ZzFkdURZWnVQTkVYZ3dhd3FVTDNSTzA2VVVzbzR0TXM&en?Google%7C0B3wF6y4HqYwYR2IyQ0UwZjllTDA&en?Google%7C0BzzxMkoHT-9ncnNhQVB6ekltNDA&en?Google%7C0B-i6DGCOEzSCS1F0dHFXZHRsMW8" target="_blank"><div class = 'center' ><font size="1" color="grey " >data map</font></div></a>-->
+<!--<a href="https://ide.c9.io/olegmoshkovich1/portfolio" target="_blank"><div class = 'center' ><font size="1" color="grey " >development</font></div></a>-->
+<!--<div class = 'center' id = 'trigger'><font size="1" color="grey " >edit</font></div> -->
+
+
+
+</body>
+</html>
+
+
+
+
+

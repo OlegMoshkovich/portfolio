@@ -20,14 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-
-
-
-
-
-app.get('/', function(req,res){
-       res.sendfile(__dirname + '/public/hello.html');
-});
+// app.get('/', function(req,res){
+//       res.sendfile(__dirname + '/public/oleg.html');
+// });
 
 app.get('/hello', function(req,res){
       res.sendfile(__dirname+'/public/hello.html');

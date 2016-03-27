@@ -32,6 +32,10 @@ app.get('/hello', function(req,res){
 //        res.sendfile(__dirname + '/public/hc.html');
 // });
 
+app.get('/boss', function(req,res){
+        res.sendfile(__dirname + '/public/zekazec.html');
+});
+
 app.get('/radial', function(req,res){
         res.sendfile(__dirname + '/public/sample_radial hierarchy.html');
 });

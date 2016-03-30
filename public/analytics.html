@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+<title>Analytics test</title>
+  <link rel="stylesheet" type="text/css"  href="css/hc.css">
+
+    <meta charset="UTF-8">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <html xmlns:xlink="http://www.w3.org/1999/xlink">  
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon-square.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+    
+<style>
+
+
+.node {
+  cursor: pointer;
+}
+.node circle {
+  stroke: grey;
+  stroke-width: 1.5px;
+}
+.node text {
+  font: 15px sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+</style>
+
+<!--Set up Scripts-->
+
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script src="js/d3/d3.js"></script>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!--keen script-->
+<script src="https://d26b395fwzu5fz.cloudfront.net/3.4.0/keen.min.js" type="text/javascript"></script>
+
+
+</head>
+
+
+<body>
+<br>
+<br>
+<br>
+<br>
+    <div class = 'center'>Keen.IO test </div>
+    <div class = 'center' id = 'trigger'><img src="/img/hc/HC_logo_1.png" width = 50px></img></a></div>
+<br>    
+    <form class = 'center' id = "edit" style="display: none;">
+            <input type="text" name = 'data' placeholder = 'data'>
+            <input type="text" name = 'time'   placeholder = 'time'>
+<br>
+<br>
+            <input type="submit" value="add">
+     </form>
+     <a href="/analytics" ><div class = 'center' ><font size="1" color="grey " >reload</font></div></a>
+
+
+
+<script>
+                $(document).ready(function(){
+                    $('#trigger').on('click',function(){
+                        $( "#edit" ).toggle( "slow", function() {
+                        });
+                    });
+                });
+</script>
+<!-- Jquerry Script-->
+
+<script>
+  
+   $(document).ready(function(){
+       
+       
+       
+       
+       
+   $("#edit").on('submit',function(){
+       
+                 var formData = $(this).serialize();
+                //  alert(formData + "hello");
+//console.log(formData);
+
+                $.ajax({
+                  type: 'POST',url: '/analytics', data: formData
+                }).done(function(inputData){
+                    console.log(inputData);
+                    //alert(inputData);
+                });
+                 event.preventDefault();
+                 $('#edit').trigger("reset");
+                });
+                });
+                
+            
+
+
+                
+                
+                
+                
+</script>
+
+
+
+
+
+<script>
+    // Configure an instance for your project
+    
+        Keen.ready(function(){
+            
+              var client = new Keen({
+    projectId:"56fbbc3d46f9a70e8b7d9aba",       // String (required)
+    writeKey: "02cae5539c993b47d6b1a1e2ab08f8da9e91524433c9bada5e5d99cfa9ba943ab9c1540d8f023ae5fc03e88861a49907b10f2cd032b04b0d36c1da9b8e505fb0a55fa37e4ac7997b517fec6ff102a410ac2f51476c793f99e6ae74efe36ea20a", // String (required for sending data)
+    readKey: "ec6f39e60cacc3fb6ccdd5d3851b1d0fa3de943e2716da98f069426bcb8b8050f25db424bddbc819465bfd59a25de76c2ee93185b32bf0894a9b8121d01936035ca81be77ef1576460215543fd204b6e5d95fdca2d304824fa2da845aa60e377",   // String (required for querying data)
+    protocol: "https",                  // String (optional: https | http | auto)
+    host: "api.keen.io/3.0",            // String (optional)
+    requestType: "jsonp"                // String (optional: jsonp, xhr, beacon)
+  });
+  
+  var pageload = {
+      key:'value'
+  }
+            client.addEvent('pageload',pageload)
+            
+            client.draw ( new Keen.Query('count', {
+    event_collection: "pageload  ",
+    timeframe: "this_14_days",
+    group_by: "visitor.geo.country",
+    interval: "daily"
+  }, {
+                event_collection:'pageload'
+            }),document.getElementById('chart') )
+            
+        })
+              
+                
+        
+
+    
+    
+
+</script>
+
+
+
+<!--Bottom links-->
+<br>
+<!--<a href="/" target="_blank"><div class = 'center' ><font size="1" color="grey " >home</font></div></a>-->
+
+<div id = 'chart'> </div>
+
+</body>
+
+
+
+</html>
+
+
+
+
+
